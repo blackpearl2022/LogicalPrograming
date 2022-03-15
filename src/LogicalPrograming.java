@@ -1,21 +1,23 @@
 import java.util.Scanner;
 
 public class LogicalPrograming {
-    public static void main(String args[]) {
-        long n, sum = 0;
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Number:");
-        n = sc.nextLong();
-        int i = 1;
-        while (i <= n / 2) {
-            if (n % i == 0) {
-                sum = sum + i;
-                i++;
+        System.out.println("Enter any number to check whether it is prime or not");
+        int num = sc.nextInt();
+        boolean flag = false;
+        for(int i = 2; i <= num/2; ++i)
+        {
+            if(num % i == 0)
+            {
+                flag = true;
+                break;
             }
         }
-        if (sum == n) {
-            System.out.println(n + " is a perfect number.");
-        } else
-            System.out.println(n + " is not a perfect number.");
+
+        if (!flag)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
     }
 }
