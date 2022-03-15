@@ -1,22 +1,21 @@
 import java.util.Scanner;
 
 public class LogicalPrograming {
-        public static void reverseNumber(int number){
-            if (number < 10){
-                System.out.println(number);
-                return;
-            }
-            else{
-                System.out.print(number % 10);
-                reverseNumber(number/10);
-            }
-        }
-        public static void main(String args[]){
-            System.out.print("Enter the number that you want to reverse: ");
-            Scanner sc = new Scanner(System.in);
-            int num = sc.nextInt();
-            System.out.print("The reverse of the given number is: ");
-            reverseNumber(num);
+    public static void main(String[] args) {
+        char[] chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray();
+        int max = 100000000;
+        double d = Math.random();
+        int random = (int) (d * max);
+        String ch = " ";
+        System.out.println("random double " + d + " random at start " + random);
+
+        while (random > 0) {
+            ch = ch + (chars[random % chars.length]);
+            random /= chars.length;
+            System.out.println(random + "  " + random % chars.length + " ch is " + ch);
         }
 
+        String couponCode = ch.toString();
+        System.out.println("Coupon Code: " + couponCode);
     }
+}
