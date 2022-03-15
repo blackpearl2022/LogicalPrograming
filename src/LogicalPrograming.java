@@ -2,20 +2,17 @@ import java.util.Scanner;
 
 public class LogicalPrograming {
     public static void main(String[] args) {
-        char[] chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray();
-        int max = 100000000;
-        double d = Math.random();
-        int random = (int) (d * max);
-        String ch = " ";
-        System.out.println("random double " + d + " random at start " + random);
+        Scanner sc = new Scanner(System.in);
 
-        while (random > 0) {
-            ch = ch + (chars[random % chars.length]);
-            random /= chars.length;
-            System.out.println(random + "  " + random % chars.length + " ch is " + ch);
-        }
+        System.out.println("Enter 1 to start clock");
+        double start = sc.nextDouble();
+        start=System.currentTimeMillis();
 
-        String couponCode = ch.toString();
-        System.out.println("Coupon Code: " + couponCode);
+        System.out.println("Enter 0 to stop clock");
+        double stop= sc.nextDouble();
+        stop=System.currentTimeMillis();
+        double elapsed_time = (stop - start)/1000;
+        System.out.println("Elapsed time is " + elapsed_time );
+
     }
 }
