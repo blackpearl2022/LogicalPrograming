@@ -1,19 +1,21 @@
+import java.util.Scanner;
+
 public class LogicalPrograming {
-    public static void main(String[] args) {
-
-        int n = 10;
-        int firstTerm = 0;
-        int secondTerm = 1;
-        System.out.println("Fibonacci Series till " + n + " terms:");
-
-        for (int i = 1; i <= n; ++i) {
-            System.out.print(firstTerm + ", ");
-
-
-            int nextTerm = firstTerm + secondTerm;
-            firstTerm = secondTerm;
-            secondTerm = nextTerm;
+    public static void main(String args[]) {
+        long n, sum = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number:");
+        n = sc.nextLong();
+        int i = 1;
+        while (i <= n / 2) {
+            if (n % i == 0) {
+                sum = sum + i;
+                i++;
+            }
         }
-
+        if (sum == n) {
+            System.out.println(n + " is a perfect number.");
+        } else
+            System.out.println(n + " is not a perfect number.");
     }
 }
